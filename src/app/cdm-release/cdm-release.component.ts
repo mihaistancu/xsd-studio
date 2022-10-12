@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CdmRelease } from './cdm-release.model';
 
 @Component({
   selector: 'app-cdm-release',
@@ -8,7 +7,7 @@ import { CdmRelease } from './cdm-release.model';
 })
 export class CdmReleaseComponent implements OnInit {
 
-  release: CdmRelease = {
+  release = {
     code: '',
     name: '',
     sectors: '',

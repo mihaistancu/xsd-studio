@@ -8,7 +8,7 @@ import { CdmReleaseSearchParameters } from './cdm-release-search-parameters.mode
 })
 export class CdmReleaseSearchParametersComponent implements OnInit {
 
-  parameters: CdmReleaseSearchParameters = {
+  parameters = {
     code: '',
     name: '',
     status: '',

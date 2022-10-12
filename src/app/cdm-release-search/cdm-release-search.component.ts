@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdmReleaseSearchParameters } from '../cdm-release-search-parameters/cdm-release-search-parameters.model';
-import { CdmReleaseSearchService } from './cdm-release-search.service';
+import { CdmReleaseSearchRequest, CdmReleaseService } from '../shared/cdm-release.service';
 
 @Component({
   selector: 'app-cdm-release-search',
@@ -9,12 +8,12 @@ import { CdmReleaseSearchService } from './cdm-release-search.service';
 })
 export class CdmReleaseSearchComponent implements OnInit {
 
-  constructor(private service: CdmReleaseSearchService) { }
+  constructor(private service: CdmReleaseService) { }
 
   ngOnInit(): void {
   }
 
-  onSearch(request: CdmReleaseSearchParameters) {
+  onSearch(request: CdmReleaseSearchRequest) {
     this.service.search(request);
   }
 

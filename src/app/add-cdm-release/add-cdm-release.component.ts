@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdmRelease } from '../cdm-release/cdm-release.model';
+import { AddCdmReleaseRequest, CdmReleaseService } from '../shared/cdm-release.service';
 
 @Component({
   selector: 'app-add-cdm-release',
@@ -8,13 +8,13 @@ import { CdmRelease } from '../cdm-release/cdm-release.model';
 })
 export class AddCdmReleaseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: CdmReleaseService) { }
 
   ngOnInit(): void {
   }
 
-  onSave(release: CdmRelease) {
-    console.log(release);
+  onSave(request: AddCdmReleaseRequest) {
+    this.service.add(request);
   }
 
 }
