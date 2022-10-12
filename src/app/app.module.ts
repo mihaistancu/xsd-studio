@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CdmReleaseComponent } from './cdm-release/cdm-release.component';
 import { CdmReleaseListComponent } from './cdm-release-list/cdm-release-list.component';
+import { CdmReleaseSearchParametersComponent } from './cdm-release-search-parameters/cdm-release-search-parameters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CdmReleaseComponent,
-    CdmReleaseListComponent
+    CdmReleaseListComponent,
+    CdmReleaseSearchParametersComponent
   ],
   imports: [
     BrowserModule,

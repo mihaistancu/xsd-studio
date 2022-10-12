@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CdmReleaseListComponent } from './cdm-release-list/cdm-release-list.component';
+import { CdmReleaseSearchParametersComponent } from './cdm-release-search-parameters/cdm-release-search-parameters.component';
 import { CdmReleaseComponent } from './cdm-release/cdm-release.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'cdm-release-list',
     component: CdmReleaseListComponent,
+  },
+  {
+    path: 'cdm-release-search-parameters',
+    component: CdmReleaseSearchParametersComponent,
   }];
 
 @NgModule({
