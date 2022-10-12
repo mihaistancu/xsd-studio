@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { AddCdmReleaseRequest, CdmReleaseService } from '../shared/cdm-release.service';
 
@@ -8,13 +9,14 @@ import { AddCdmReleaseRequest, CdmReleaseService } from '../shared/cdm-release.s
 })
 export class AddCdmReleaseComponent implements OnInit {
 
-  constructor(private service: CdmReleaseService) { }
+  constructor(private location: Location, private service: CdmReleaseService) { }
 
   ngOnInit(): void {
   }
 
   onSave(request: AddCdmReleaseRequest) {
-    this.service.add(request);
+    this.service.add(request).subscribe(
+      _ => this.location.back());
   }
 
 }

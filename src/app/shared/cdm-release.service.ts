@@ -21,13 +21,13 @@ export class CdmReleaseService {
 
   add(request: AddCdmReleaseRequest): Observable<void> {
     this.RELEASES.push({...request, status: 'Draft'});
-    return of();
+    return of(void 0);
   }
 
   update(request: UpdateCdmReleaseRequest): Observable<void> {
     const code = this.RELEASES.findIndex(r => r.code == request.code);
     this.RELEASES[code] == request;
-    return of();
+    return of(void 0);
   }
 
   get(cdmCode: string): Observable<CdmRelease> {
@@ -38,9 +38,10 @@ export class CdmReleaseService {
     return of(this.CRS[cdmCode]);
   }
 
-  addChangeRequest(request: AddChangeRequestRequest) {
+  addChangeRequest(request: AddChangeRequestRequest): Observable<void> {
     this.CRS[request.cdmCode] = this.CRS[request.cdmCode] ?? [];  
     this.CRS[request.cdmCode].push(request);
+    return of(void 0);
   }
 }
 

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CdmRelease, CdmReleaseService, ChangeRequest, UpdateCdmReleaseRequest } from '../shared/cdm-release.service';
@@ -13,7 +14,10 @@ export class EditCdmReleaseComponent implements OnInit {
   release!: CdmRelease;
   changeRequests!: ChangeRequest[];
 
-  constructor(private route: ActivatedRoute, private service: CdmReleaseService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private location: Location,
+    private service: CdmReleaseService) { }
 
   ngOnInit(): void {
     this.cdmCode = this.route.snapshot.paramMap.get('cdmCode')!;
@@ -22,6 +26,7 @@ export class EditCdmReleaseComponent implements OnInit {
   }
 
   onSave(request: UpdateCdmReleaseRequest) {
-    this.service.update(request);
+    this.service.update(request).subscribe(
+      _ => this.location.back());
   }
 }
