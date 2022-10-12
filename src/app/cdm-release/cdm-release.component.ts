@@ -10,7 +10,6 @@ export class CdmReleaseComponent implements OnInit {
   release = {
     code: '',
     name: '',
-    sectors: '',
     description: '',
     activationDate: ''  
   };

@@ -20,7 +20,6 @@ export class CdmReleaseService {
       name: request.name,
       activationDate: request.activationDate,
       description: request.description,
-      sectors: request.sectors,
       status: 'Draft'
     });
     return of();
@@ -30,7 +29,6 @@ export class CdmReleaseService {
 export interface AddCdmReleaseRequest {
   code: string,
   name: string,
-  sectors: string,
   description: string,
   activationDate: string
 }
@@ -46,7 +44,6 @@ export interface CdmRelease {
   code: string,
   name: string,
   status: string,
-  sectors: string,
   description: string,
   activationDate: string
 }
