@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CdmReleaseSearchService } from './cdm-release-search.service';
 
 @Component({
   selector: 'app-cdm-release-search',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CdmReleaseSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: CdmReleaseSearchService) { }
 
   ngOnInit(): void {
   }
 
   onSearch() {
-    console.log('search');
+    this.service.search({code:'',name:'',status:'',activationDate:''});
   }
 
 }
