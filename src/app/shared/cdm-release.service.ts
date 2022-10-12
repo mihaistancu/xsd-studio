@@ -15,9 +15,19 @@ export class CdmReleaseService {
     return of(this.RELEASES);
   }
 
-  add(request: AddCdmReleaseRequest) {
+  add(request: AddCdmReleaseRequest): Observable<void> {
     this.RELEASES.push({...request, status: 'Draft'});
     return of();
+  }
+
+  update(request: UpdateCdmReleaseRequest): Observable<void> {
+    const code = this.RELEASES.findIndex(r => r.code == request.code);
+    this.RELEASES[code] == request;
+    return of();
+  }
+
+  get(cdmCode: string): Observable<CdmRelease> {
+    return of(this.RELEASES.find(r => r.code == cdmCode)!);
   }
 
   addChangeRequest(request: AddChangeRequestRequest) {
@@ -27,6 +37,13 @@ export class CdmReleaseService {
 }
 
 export interface AddCdmReleaseRequest {
+  code: string,
+  name: string,
+  description: string,
+  activationDate: string
+}
+
+export interface UpdateCdmReleaseRequest {
   code: string,
   name: string,
   description: string,

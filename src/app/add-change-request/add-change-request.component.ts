@@ -14,7 +14,7 @@ export class AddChangeRequestComponent implements OnInit {
   constructor(private route: ActivatedRoute, private service: CdmReleaseService) { }
 
   ngOnInit(): void {
-    this.cdmCode = this.route.snapshot.paramMap.get('id')!;
+    this.cdmCode = this.route.snapshot.paramMap.get('cdmCode')!;
   }
 
   onSave(request: ChangeRequest) {

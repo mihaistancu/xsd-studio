@@ -11,6 +11,7 @@ import { CdmReleaseSearchComponent } from './cdm-release-search/cdm-release-sear
 import { AddCdmReleaseComponent } from './add-cdm-release/add-cdm-release.component';
 import { ChangeRequestComponent } from './change-request/change-request.component';
 import { AddChangeRequestComponent } from './add-change-request/add-change-request.component';
+import { EditCdmReleaseComponent } from './edit-cdm-release/edit-cdm-release.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddChangeRequestComponent } from './add-change-request/add-change-reque
     CdmReleaseSearchComponent,
     AddCdmReleaseComponent,
     ChangeRequestComponent,
-    AddChangeRequestComponent
+    AddChangeRequestComponent,
+    EditCdmReleaseComponent
   ],
   imports: [
     BrowserModule,
