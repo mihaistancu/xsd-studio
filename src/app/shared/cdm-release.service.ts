@@ -11,6 +11,10 @@ export class CdmReleaseService {
 
   constructor() { }
 
+  getAll(): Observable<CdmRelease[]> {
+    return of(this.RELEASES);
+  }
+  
   search(request: CdmReleaseSearchRequest): Observable<CdmRelease[]> {
     return of(this.RELEASES);
   }

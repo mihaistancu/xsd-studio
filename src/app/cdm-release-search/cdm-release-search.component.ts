@@ -13,6 +13,8 @@ export class CdmReleaseSearchComponent implements OnInit {
   constructor(private service: CdmReleaseService) { }
 
   ngOnInit(): void {
+    this.service.getAll().subscribe(result => 
+      this.releases = result);
   }
 
   onSearch(request: CdmReleaseSearchRequest) {
