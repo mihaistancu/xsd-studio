@@ -30,6 +30,10 @@ export class CdmReleaseService {
     return of(this.RELEASES.find(r => r.code == cdmCode)!);
   }
 
+  getChangeRequests(cdmCode: string): Observable<ChangeRequest[]> {
+    return of(this.CRS[cdmCode]);
+  }
+
   addChangeRequest(request: AddChangeRequestRequest) {
     this.CRS[request.cdmCode] = this.CRS[request.cdmCode] ?? [];  
     this.CRS[request.cdmCode].push(request);
