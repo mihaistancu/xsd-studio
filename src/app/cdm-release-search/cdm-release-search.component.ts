@@ -12,4 +12,8 @@ export class CdmReleaseSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSearch() {
+    console.log('search');
+  }
+
 }
