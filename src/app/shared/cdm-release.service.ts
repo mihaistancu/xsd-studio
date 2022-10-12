@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 export class CdmReleaseService {
 
   private RELEASES: CdmRelease[] = [];
+  private CRS: {[cdmCode: string]: ChangeRequest[]} = {};
 
   constructor() { }
 
@@ -15,14 +16,13 @@ export class CdmReleaseService {
   }
 
   add(request: AddCdmReleaseRequest) {
-    this.RELEASES.push({
-      code: request.code,
-      name: request.name,
-      activationDate: request.activationDate,
-      description: request.description,
-      status: 'Draft'
-    });
+    this.RELEASES.push({...request, status: 'Draft'});
     return of();
+  }
+
+  addChangeRequest(request: AddChangeRequestRequest) {
+    this.CRS[request.cdmCode] = this.CRS[request.cdmCode] ?? [];  
+    this.CRS[request.cdmCode].push(request);
   }
 }
 
@@ -46,4 +46,19 @@ export interface CdmRelease {
   status: string,
   description: string,
   activationDate: string
+}
+
+export interface AddChangeRequestRequest {
+  cdmCode: string,
+  id: string,
+  summary: string,
+  sectors: string,
+  jiraLink: string
+}
+
+export interface ChangeRequest {
+  id: string,
+  summary: string,
+  sectors: string,
+  jiraLink: string
 }
