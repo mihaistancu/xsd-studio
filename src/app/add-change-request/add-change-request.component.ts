@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AddChangeRequestRequest, CdmReleaseService, ChangeRequest } from '../shared/cdm-release.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CdmReleaseService, ChangeRequest } from '../shared/cdm-release.service';
 
 @Component({
   selector: 'app-add-change-request',
@@ -8,12 +9,12 @@ import { AddChangeRequestRequest, CdmReleaseService, ChangeRequest } from '../sh
 })
 export class AddChangeRequestComponent implements OnInit {
 
-  @Input()
   cdmCode: string = '';
 
-  constructor(private service: CdmReleaseService) { }
+  constructor(private route: ActivatedRoute, private service: CdmReleaseService) { }
 
   ngOnInit(): void {
+    this.cdmCode = this.route.snapshot.paramMap.get('id')!;
   }
 
   onSave(request: ChangeRequest) {
