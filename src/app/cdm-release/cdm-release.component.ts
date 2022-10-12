@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CdmRelease } from './cdm-release.model';
 
 @Component({
   selector: 'app-cdm-release',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cdm-release.component.css']
 })
 export class CdmReleaseComponent implements OnInit {
+
+  release: CdmRelease = {
+    code: '',
+    name: '',
+    sectors: '',
+    description: '',
+    activationDate: ''  
+  };
 
   constructor() { }
 
