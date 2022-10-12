@@ -1,4 +1,4 @@
-<app-cdm-release-search-parameters></app-cdm-release-search-parameters>
-<button (click)="onSearch()">Search</button>
+<app-cdm-release-search-parameters #searchForm></app-cdm-release-search-parameters>
+<button (click)="onSearch(searchForm.parameters)">Search</button>
 <button routerLink="/new-cdm-release">Add</button>
 <app-cdm-release-list></app-cdm-release-list>
