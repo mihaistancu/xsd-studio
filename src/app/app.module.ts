@@ -8,6 +8,7 @@ import { CdmReleaseComponent } from './cdm-release/cdm-release.component';
 import { CdmReleaseListComponent } from './cdm-release-list/cdm-release-list.component';
 import { CdmReleaseSearchParametersComponent } from './cdm-release-search-parameters/cdm-release-search-parameters.component';
 import { CdmReleaseSearchComponent } from './cdm-release-search/cdm-release-search.component';
+import { AddCdmReleaseComponent } from './add-cdm-release/add-cdm-release.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CdmReleaseSearchComponent } from './cdm-release-search/cdm-release-sear
     CdmReleaseComponent,
     CdmReleaseListComponent,
     CdmReleaseSearchParametersComponent,
-    CdmReleaseSearchComponent
+    CdmReleaseSearchComponent,
+    AddCdmReleaseComponent
   ],
   imports: [
     BrowserModule,
