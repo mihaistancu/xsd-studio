@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CdmReleaseComponent } from './cdm-release/cdm-release.component';
 import { CdmReleaseListComponent } from './cdm-release-list/cdm-release-list.component';
 import { CdmReleaseSearchParametersComponent } from './cdm-release-search-parameters/cdm-release-search-parameters.component';
+import { CdmReleaseSearchComponent } from './cdm-release-search/cdm-release-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CdmReleaseComponent,
     CdmReleaseListComponent,
-    CdmReleaseSearchParametersComponent
+    CdmReleaseSearchParametersComponent,
+    CdmReleaseSearchComponent
   ],
   imports: [
     BrowserModule,
