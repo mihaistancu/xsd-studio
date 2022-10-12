@@ -10,6 +10,7 @@ export class CdmReleaseComponent implements OnInit {
 
   @Input()
   release = {
+    id: '',
     code: '',
     name: '',
     description: '',

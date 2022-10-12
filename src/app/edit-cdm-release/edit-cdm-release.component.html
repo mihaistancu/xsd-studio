@@ -1,4 +1,4 @@
 <app-cdm-release #cdm [release]="release"></app-cdm-release>
 <button (click)="onSave(cdm.release)">Save</button>
-<button routerLink="/new-change-request/{{cdmCode}}">Add Change Request</button>
+<button routerLink="/new-change-request/{{cdmId}}">Add Change Request</button>
 <app-change-request-list [changeRequests]="changeRequests"></app-change-request-list>

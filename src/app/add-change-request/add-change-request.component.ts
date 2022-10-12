@@ -10,7 +10,7 @@ import { CdmReleaseService, ChangeRequest } from '../shared/cdm-release.service'
 })
 export class AddChangeRequestComponent implements OnInit {
 
-  cdmCode: string = '';
+  cdmId: string = '';
 
   constructor(
     private route: ActivatedRoute, 
@@ -18,11 +18,11 @@ export class AddChangeRequestComponent implements OnInit {
     private service: CdmReleaseService) { }
 
   ngOnInit(): void {
-    this.cdmCode = this.route.snapshot.paramMap.get('cdmCode')!;
+    this.cdmId = this.route.snapshot.paramMap.get('cdmId')!;
   }
 
   onSave(request: ChangeRequest) {
-    this.service.addChangeRequest({...request, cdmCode: this.cdmCode}).subscribe(
+    this.service.addChangeRequest({...request, cdmId: this.cdmId}).subscribe(
       _ => this.location.back());
   }
 }

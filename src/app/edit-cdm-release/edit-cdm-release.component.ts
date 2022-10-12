@@ -10,7 +10,7 @@ import { CdmRelease, CdmReleaseService, ChangeRequest, UpdateCdmReleaseRequest }
 })
 export class EditCdmReleaseComponent implements OnInit {
 
-  cdmCode!: string;
+  cdmId!: string;
   release!: CdmRelease;
   changeRequests!: ChangeRequest[];
 
@@ -20,9 +20,9 @@ export class EditCdmReleaseComponent implements OnInit {
     private service: CdmReleaseService) { }
 
   ngOnInit(): void {
-    this.cdmCode = this.route.snapshot.paramMap.get('cdmCode')!;
-    this.service.get(this.cdmCode).subscribe(result => this.release = result);
-    this.service.getChangeRequests(this.cdmCode).subscribe(result => this.changeRequests = result);
+    this.cdmId = this.route.snapshot.paramMap.get('cdmId')!;
+    this.service.get(this.cdmId).subscribe(result => this.release = result);
+    this.service.getChangeRequests(this.cdmId).subscribe(result => this.changeRequests = result);
   }
 
   onSave(request: UpdateCdmReleaseRequest) {

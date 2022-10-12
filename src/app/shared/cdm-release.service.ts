@@ -6,8 +6,9 @@ import { Observable, of } from 'rxjs';
 })
 export class CdmReleaseService {
 
+  private counter = 0;
   private RELEASES: CdmRelease[] = [];
-  private CRS: {[cdmCode: string]: ChangeRequest[]} = {};
+  private CRS: {[cdmId: string]: ChangeRequest[]} = {};
 
   constructor() { }
 
@@ -20,27 +21,27 @@ export class CdmReleaseService {
   }
 
   add(request: AddCdmReleaseRequest): Observable<void> {
-    this.RELEASES.push({...request, status: 'Draft'});
+    this.RELEASES.push({...request, id: `${this.counter++}`, status: 'Draft'});
     return of(void 0);
   }
 
   update(request: UpdateCdmReleaseRequest): Observable<void> {
-    const code = this.RELEASES.findIndex(r => r.code == request.code);
-    this.RELEASES[code] == request;
+    const id = this.RELEASES.findIndex(r => r.id == request.id);
+    this.RELEASES[id] == request;
     return of(void 0);
   }
 
-  get(cdmCode: string): Observable<CdmRelease> {
-    return of(this.RELEASES.find(r => r.code == cdmCode)!);
+  get(cdmId: string): Observable<CdmRelease> {
+    return of(this.RELEASES.find(r => r.id == cdmId)!);
   }
 
-  getChangeRequests(cdmCode: string): Observable<ChangeRequest[]> {
-    return of(this.CRS[cdmCode]);
+  getChangeRequests(cdmId: string): Observable<ChangeRequest[]> {
+    return of(this.CRS[cdmId]);
   }
 
   addChangeRequest(request: AddChangeRequestRequest): Observable<void> {
-    this.CRS[request.cdmCode] = this.CRS[request.cdmCode] ?? [];  
-    this.CRS[request.cdmCode].push(request);
+    this.CRS[request.cdmId] = this.CRS[request.cdmId] ?? [];  
+    this.CRS[request.cdmId].push(request);
     return of(void 0);
   }
 }
@@ -53,6 +54,7 @@ export interface AddCdmReleaseRequest {
 }
 
 export interface UpdateCdmReleaseRequest {
+  id: string,
   code: string,
   name: string,
   description: string,
@@ -67,6 +69,7 @@ export interface CdmReleaseSearchRequest {
 }
 
 export interface CdmRelease {
+  id: string;
   code: string,
   name: string,
   status: string,
@@ -75,7 +78,7 @@ export interface CdmRelease {
 }
 
 export interface AddChangeRequestRequest {
-  cdmCode: string,
+  cdmId: string,
   id: string,
   summary: string,
   sectors: string,

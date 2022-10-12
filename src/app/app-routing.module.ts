@@ -11,7 +11,7 @@ const routes: Routes = [
     component: AddCdmReleaseComponent,
   },
   {
-    path: 'edit-cdm-release/:cdmCode',
+    path: 'edit-cdm-release/:cdmId',
     component: EditCdmReleaseComponent,
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: CdmReleaseSearchComponent,
   },
   {
-    path: 'new-change-request/:cdmCode',
+    path: 'new-change-request/:cdmId',
     component: AddChangeRequestComponent,
   }];
 
