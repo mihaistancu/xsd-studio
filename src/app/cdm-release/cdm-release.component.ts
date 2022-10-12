@@ -9,8 +9,6 @@ import { CdmReleaseService } from '../shared/cdm-release.service';
 export class CdmReleaseComponent implements OnInit {
 
   @Input()
-  cdmCode: string = '';
-
   release = {
     code: '',
     name: '',
@@ -18,12 +16,8 @@ export class CdmReleaseComponent implements OnInit {
     activationDate: ''  
   };
 
-  constructor(private service: CdmReleaseService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    if (this.cdmCode) {
-      this.service.get(this.cdmCode).subscribe(result => this.release = result);
-    }
-  }
+  ngOnInit(): void { }
 
 }

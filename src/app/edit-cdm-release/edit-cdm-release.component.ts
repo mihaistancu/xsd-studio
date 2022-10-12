@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CdmReleaseService, ChangeRequest, UpdateCdmReleaseRequest } from '../shared/cdm-release.service';
+import { CdmRelease, CdmReleaseService, ChangeRequest, UpdateCdmReleaseRequest } from '../shared/cdm-release.service';
 
 @Component({
   selector: 'app-edit-cdm-release',
@@ -9,14 +9,15 @@ import { CdmReleaseService, ChangeRequest, UpdateCdmReleaseRequest } from '../sh
 })
 export class EditCdmReleaseComponent implements OnInit {
 
-  cdmCode: string = '';
-  changeRequests: ChangeRequest[] = [];
+  cdmCode!: string;
+  release!: CdmRelease;
+  changeRequests!: ChangeRequest[];
 
   constructor(private route: ActivatedRoute, private service: CdmReleaseService) { }
 
   ngOnInit(): void {
     this.cdmCode = this.route.snapshot.paramMap.get('cdmCode')!;
-
+    this.service.get(this.cdmCode).subscribe(result => this.release = result);
     this.service.getChangeRequests(this.cdmCode).subscribe(result => this.changeRequests = result);
   }
 
