@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CdmReleaseService {
 
+  private RELEASES: CdmRelease[] = [];
+
   constructor() { }
 
-  search(request: CdmReleaseSearchRequest) {
-    console.log(request);
+  search(request: CdmReleaseSearchRequest): Observable<CdmRelease[]> {
+    return of(this.RELEASES);
   }
 
   add(request: AddCdmReleaseRequest) {
-    console.log(request);
+    this.RELEASES.push({
+      code: request.code,
+      name: request.name,
+      activationDate: request.activationDate,
+      description: request.description,
+      sectors: request.sectors,
+      status: 'Draft'
+    });
+    return of();
   }
 }
 
@@ -28,5 +39,14 @@ export interface CdmReleaseSearchRequest {
   code: string,
   name: string,
   status: string, 
+  activationDate: string
+}
+
+export interface CdmRelease {
+  code: string,
+  name: string,
+  status: string,
+  sectors: string,
+  description: string,
   activationDate: string
 }

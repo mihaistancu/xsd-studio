@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CdmRelease } from '../shared/cdm-release.service';
 
 @Component({
   selector: 'app-cdm-release-list',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CdmReleaseListComponent implements OnInit {
 
-  releaseList  = [
-    {code:'1', name:'1',description:'first release',status:'published',activationDate:'20220101'}
-  ];
+  @Input()
+  releases: CdmRelease[] = [];
 
   constructor() { }
 

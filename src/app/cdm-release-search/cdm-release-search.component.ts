@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdmReleaseSearchRequest, CdmReleaseService } from '../shared/cdm-release.service';
+import { CdmRelease, CdmReleaseSearchRequest, CdmReleaseService } from '../shared/cdm-release.service';
 
 @Component({
   selector: 'app-cdm-release-search',
@@ -8,13 +8,16 @@ import { CdmReleaseSearchRequest, CdmReleaseService } from '../shared/cdm-releas
 })
 export class CdmReleaseSearchComponent implements OnInit {
 
+  releases: CdmRelease[] = []
+  
   constructor(private service: CdmReleaseService) { }
 
   ngOnInit(): void {
   }
 
   onSearch(request: CdmReleaseSearchRequest) {
-    this.service.search(request);
+    this.service.search(request).subscribe(result =>
+      this.releases = result);
   }
 
 }
