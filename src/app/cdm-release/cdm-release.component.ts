@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CdmReleaseService } from '../shared/cdm-release.service';
 
 @Component({
   selector: 'app-cdm-release',
