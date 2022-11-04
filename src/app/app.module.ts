@@ -15,6 +15,7 @@ import { EditCdmReleaseComponent } from './releases/edit-cdm-release/edit-cdm-re
 import { ChangeRequestListComponent } from './releases/change-request-list/change-request-list.component';
 import { TreeNavigationComponent } from './modeling/tree-navigation/tree-navigation.component';
 import { ModelSearchComponent } from './modeling/model-search/model-search.component';
+import { TreeItemComponent } from './modeling/tree-item/tree-item.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ModelSearchComponent } from './modeling/model-search/model-search.compo
     EditCdmReleaseComponent,
     ChangeRequestListComponent,
     TreeNavigationComponent,
-    ModelSearchComponent
+    ModelSearchComponent,
+    TreeItemComponent
   ],
   imports: [
     BrowserModule,
