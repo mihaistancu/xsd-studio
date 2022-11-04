@@ -11,7 +11,7 @@ export class ModelService {
     children: [{
       name: 'Primitives',
       children: []
-    }, {
+    },{
       name: 'CDT',
       children: []
     },{

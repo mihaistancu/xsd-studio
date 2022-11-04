@@ -1,2 +1,4 @@
-{{item.name}}
-<app-tree-item *ngFor="let child of item.children" [item]="child"></app-tree-item>
+<div>
+    {{item.name}}
+    <app-tree-item *ngFor="let child of item.children" [item]="child"></app-tree-item>
+</div>
