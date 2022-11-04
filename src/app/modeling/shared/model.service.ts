@@ -7,7 +7,19 @@ import { Observable, of } from 'rxjs';
 export class ModelService {
 
   NAMES = [{
-    name: "Core Components",
+    name: 'Core Components',
+    children: [{
+      name: 'Primitives',
+      children: []
+    }, {
+      name: 'CDT',
+      children: []
+    },{
+      name: 'BDT',
+      children: []
+    }]
+  }, {
+    name: 'Pensions',
     children: []
   }];
 
