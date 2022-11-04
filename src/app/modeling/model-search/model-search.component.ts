@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModelItemName, ModelService } from '../shared/model.service';
 
 @Component({
   selector: 'app-model-search',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModelSearchComponent implements OnInit {
 
-  constructor() { }
+  items: ModelItemName[] = [];
+
+  constructor(private service: ModelService) { }
 
   ngOnInit(): void {
+    this.service.getAllNames().subscribe(result =>
+      this.items = result);
   }
 
 }

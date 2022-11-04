@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ModelItemName } from '../shared/model.service';
 
 @Component({
   selector: 'app-tree-navigation',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreeNavigationComponent implements OnInit {
 
+  @Input()
+  items: ModelItemName[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
