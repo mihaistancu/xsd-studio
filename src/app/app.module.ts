@@ -13,6 +13,8 @@ import { ChangeRequestComponent } from './releases/change-request/change-request
 import { AddChangeRequestComponent } from './releases/add-change-request/add-change-request.component';
 import { EditCdmReleaseComponent } from './releases/edit-cdm-release/edit-cdm-release.component';
 import { ChangeRequestListComponent } from './releases/change-request-list/change-request-list.component';
+import { TreeNavigationComponent } from './modeling/tree-navigation/tree-navigation.component';
+import { ModelSearchComponent } from './modeling/model-search/model-search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ChangeRequestListComponent } from './releases/change-request-list/chang
     ChangeRequestComponent,
     AddChangeRequestComponent,
     EditCdmReleaseComponent,
-    ChangeRequestListComponent
+    ChangeRequestListComponent,
+    TreeNavigationComponent,
+    ModelSearchComponent
   ],
   imports: [
     BrowserModule,
