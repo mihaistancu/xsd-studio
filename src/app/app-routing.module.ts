@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddCdmReleaseComponent } from './add-cdm-release/add-cdm-release.component';
-import { AddChangeRequestComponent } from './add-change-request/add-change-request.component';
-import { CdmReleaseSearchComponent } from './cdm-release-search/cdm-release-search.component';
-import { EditCdmReleaseComponent } from './edit-cdm-release/edit-cdm-release.component';
+import { AddCdmReleaseComponent } from './releases/add-cdm-release/add-cdm-release.component';
+import { AddChangeRequestComponent } from './releases/add-change-request/add-change-request.component';
+import { CdmReleaseSearchComponent } from './releases/cdm-release-search/cdm-release-search.component';
+import { EditCdmReleaseComponent } from './releases/edit-cdm-release/edit-cdm-release.component';
 
 const routes: Routes = [
   {
