@@ -10,7 +10,16 @@ export class ModelService {
     name: 'Core Components',
     children: [{
       name: 'Primitives',
-      children: []
+      children: [{
+        name: 'integer',
+        children: []
+      },{
+        name: 'string',
+        children: []
+      },{
+        name: 'date',
+        children: []
+      }]
     },{
       name: 'CDT',
       children: []

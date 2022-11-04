@@ -14,6 +14,8 @@ export class TreeItemComponent implements OnInit {
     children: []
   };
 
+  public isExpanded: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
