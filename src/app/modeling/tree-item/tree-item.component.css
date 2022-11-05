@@ -5,3 +5,8 @@ div {
 app-tree-item {
     display: block;
 }
+
+p {
+    margin-left: 6px;
+    display: inline;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewService } from '../shared/view.service';
 
 @Component({
   selector: 'app-model',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModelComponent implements OnInit {
 
-  constructor() { }
+  name: string = '';
+
+  constructor(private viewService: ViewService) { }
 
   ngOnInit(): void {
+    this.viewService.name$.subscribe(name => {
+      this.name = name;
+    });
   }
 
 }

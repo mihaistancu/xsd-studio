@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModelItemName } from '../shared/model.service';
+import { ViewService } from '../shared/view.service';
 
 @Component({
   selector: 'app-tree-item',
@@ -16,9 +17,12 @@ export class TreeItemComponent implements OnInit {
 
   public isExpanded: boolean = true;
 
-  constructor() { }
+  constructor(private viewService: ViewService) { }
 
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.viewService.show(this.item.name);
+  }
 }

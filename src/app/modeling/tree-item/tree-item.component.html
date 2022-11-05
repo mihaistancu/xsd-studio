@@ -1,5 +1,5 @@
 <button *ngIf="item.children.length > 0" (click)="isExpanded = !isExpanded">{{isExpanded ? '-' : '+'}}</button>
-{{item.name}}
+<p (click)="onClick()">{{item.name}}</p>
 <div [style.display]="isExpanded? 'block' : 'none'">
     <app-tree-item *ngFor="let child of item.children" [item]="child"></app-tree-item>
 </div>
