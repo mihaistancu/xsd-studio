@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs';
+import { Model, ModelService } from '../shared/model.service';
 import { ViewService } from '../shared/view.service';
 
 @Component({
@@ -8,13 +10,19 @@ import { ViewService } from '../shared/view.service';
 })
 export class ModelComponent implements OnInit {
 
-  name: string = '';
+  model!: Model;
 
-  constructor(private viewService: ViewService) { }
+  constructor(
+    private viewService: ViewService,
+    private modelService: ModelService
+  ) { }
 
   ngOnInit(): void {
-    this.viewService.name$.subscribe(name => {
-      this.name = name;
+    this.viewService.name$.pipe(
+      switchMap(name => this.modelService.get(name, 'version'))
+    )
+    .subscribe(model => {
+      this.model = model;
     });
   }
 

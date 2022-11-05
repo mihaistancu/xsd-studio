@@ -10,10 +10,7 @@ import { ViewService } from '../shared/view.service';
 export class TreeItemComponent implements OnInit {
 
   @Input() 
-  item: ModelItemName = {
-    name: '',
-    children: []
-  };
+  item!: ModelItemName;
 
   public isExpanded: boolean = true;
 

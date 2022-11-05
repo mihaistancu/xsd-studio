@@ -38,9 +38,18 @@ export class ModelService {
     return of(this.NAMES);
   }
 
+  get(name: string, version: string): Observable<Model> {
+    return of({
+      name: name
+    });
+  }
 }
 
 export interface ModelItemName {
   name: string,
   children: ModelItemName[]
+}
+
+export interface Model {
+  name: string
 }
