@@ -1,7 +1,5 @@
-<div>
-    <button (click)="isExpanded = !isExpanded">{{isExpanded ? '-' : '+'}}</button>
-    {{item.name}}
-    <ng-container *ngIf="isExpanded">
-        <app-tree-item *ngFor="let child of item.children" [item]="child"></app-tree-item>
-    </ng-container>
+<button *ngIf="item.children.length > 0" (click)="isExpanded = !isExpanded">{{isExpanded ? '-' : '+'}}</button>
+{{item.name}}
+<div [style.display]="isExpanded? 'block' : 'none'">
+    <app-tree-item *ngFor="let child of item.children" [item]="child"></app-tree-item>
 </div>
