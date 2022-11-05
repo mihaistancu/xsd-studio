@@ -16,6 +16,7 @@ import { ChangeRequestListComponent } from './releases/change-request-list/chang
 import { TreeNavigationComponent } from './modeling/tree-navigation/tree-navigation.component';
 import { ModelSearchComponent } from './modeling/model-search/model-search.component';
 import { TreeItemComponent } from './modeling/tree-item/tree-item.component';
+import { ModelComponent } from './modeling/model/model.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TreeItemComponent } from './modeling/tree-item/tree-item.component';
     ChangeRequestListComponent,
     TreeNavigationComponent,
     ModelSearchComponent,
-    TreeItemComponent
+    TreeItemComponent,
+    ModelComponent
   ],
   imports: [
     BrowserModule,
