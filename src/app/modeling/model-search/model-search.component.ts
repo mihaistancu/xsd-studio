@@ -13,8 +13,6 @@ export class ModelSearchComponent implements OnInit {
   constructor(private service: ModelService) { }
 
   ngOnInit(): void {
-    this.service.getAllNames().subscribe(result =>
-      this.items = result);
   }
 
 }
