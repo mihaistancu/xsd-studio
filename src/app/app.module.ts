@@ -17,6 +17,7 @@ import { TreeNavigationComponent } from './modeling/tree-navigation/tree-navigat
 import { ModelSearchComponent } from './modeling/model-search/model-search.component';
 import { TreeItemComponent } from './modeling/tree-item/tree-item.component';
 import { ModelComponent } from './modeling/model/model.component';
+import { ModelExplorerComponent } from './modeling/model-explorer/model-explorer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ModelComponent } from './modeling/model/model.component';
     TreeNavigationComponent,
     ModelSearchComponent,
     TreeItemComponent,
-    ModelComponent
+    ModelComponent,
+    ModelExplorerComponent
   ],
   imports: [
     BrowserModule,

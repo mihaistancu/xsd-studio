@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ModelExplorerComponent } from './modeling/model-explorer/model-explorer.component';
 import { ModelSearchComponent } from './modeling/model-search/model-search.component';
 import { AddCdmReleaseComponent } from './releases/add-cdm-release/add-cdm-release.component';
 import { AddChangeRequestComponent } from './releases/add-change-request/add-change-request.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'model-search',
     component: ModelSearchComponent
+  },
+  {
+    path: 'model-explorer',
+    component: ModelExplorerComponent
   }];
 
 @NgModule({
