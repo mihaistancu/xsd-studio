@@ -1,0 +1,4 @@
+branch
+<select>
+    <option *ngFor="let branch of branches" [value]="branch" [attr.selected]="selected == branch ? true : null">{{branch}}</option>
+</select>

@@ -32,6 +32,8 @@ export class ModelService {
     children: []
   }];
 
+  BRANCHES = ['4.3', '4.2'];
+
   constructor() { }
   
   getAllNames(): Observable<ModelItemName[]> {
@@ -42,6 +44,10 @@ export class ModelService {
     return of({
       name: name
     });
+  }
+
+  getAllBranches() {
+    return of(this.BRANCHES);
   }
 }
 

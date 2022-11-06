@@ -1,2 +1,7 @@
-<app-tree-navigation [items]="items"></app-tree-navigation>
-<app-model></app-model>
+<div class="container">
+    <div class="left">
+        <app-branch-selector></app-branch-selector>
+        <app-tree-navigation [items]="items"></app-tree-navigation>
+    </div>
+    <app-model class="right"></app-model>
+</div>

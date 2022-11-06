@@ -18,6 +18,7 @@ import { ModelSearchComponent } from './modeling/model-search/model-search.compo
 import { TreeItemComponent } from './modeling/tree-item/tree-item.component';
 import { ModelComponent } from './modeling/model/model.component';
 import { ModelExplorerComponent } from './modeling/model-explorer/model-explorer.component';
+import { BranchSelectorComponent } from './modeling/branch-selector/branch-selector.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ModelExplorerComponent } from './modeling/model-explorer/model-explorer
     ModelSearchComponent,
     TreeItemComponent,
     ModelComponent,
-    ModelExplorerComponent
+    ModelExplorerComponent,
+    BranchSelectorComponent
   ],
   imports: [
     BrowserModule,

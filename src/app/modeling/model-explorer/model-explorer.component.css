@@ -1,0 +1,16 @@
+app-branch-selector {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.container {
+    display: flex;
+}
+
+.left {
+    flex: 0 0 auto;
+}
+
+.right {
+    flex: 1 1 auto;
+}
