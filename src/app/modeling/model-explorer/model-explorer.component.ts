@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs';
 import { ModelItemName, ModelService } from '../shared/model.service';
+import { ViewService } from '../shared/view.service';
 
 @Component({
   selector: 'app-model-explorer',
@@ -10,11 +12,15 @@ export class ModelExplorerComponent implements OnInit {
 
   items: ModelItemName[] = [];
 
-  constructor(private service: ModelService) { }
+  constructor(
+    private modelService: ModelService,
+    private viewService: ViewService
+  ) { }
 
   ngOnInit(): void {
-    this.service.getAllNames().subscribe(result =>
-      this.items = result);
+    this.viewService.branch$
+      .pipe(switchMap(branch => this.modelService.getAllNames(branch)))
+      .subscribe(result => this.items = result);
   }
   
 }

@@ -36,11 +36,11 @@ export class ModelService {
 
   constructor() { }
   
-  getAllNames(): Observable<ModelItemName[]> {
+  getAllNames(branch: string): Observable<ModelItemName[]> {
     return of(this.NAMES);
   }
 
-  get(name: string, version: string): Observable<Model> {
+  get(name: string, branch: string): Observable<Model> {
     return of({
       name: name
     });

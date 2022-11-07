@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap } from 'rxjs';
+import { combineLatest, switchMap } from 'rxjs';
 import { Model, ModelService } from '../shared/model.service';
 import { ViewService } from '../shared/view.service';
 
@@ -18,12 +18,12 @@ export class ModelComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.viewService.name$.pipe(
-      switchMap(name => this.modelService.get(name, 'version'))
-    )
-    .subscribe(model => {
-      this.model = model;
-    });
+    combineLatest({
+      branch: this.viewService.branch$, 
+      name: this.viewService.name$
+    }).pipe(
+      switchMap(result => this.modelService.get(result.name, result.branch))
+    ).subscribe(model => this.model = model);
   }
 
 }
